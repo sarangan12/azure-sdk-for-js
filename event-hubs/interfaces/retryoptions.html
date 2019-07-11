@@ -88,6 +88,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="retryoptions.html#maxretries" class="tsd-kind-icon">max<wbr>Retries</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="retryoptions.html#retryinterval" class="tsd-kind-icon">retry<wbr>Interval</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="retryoptions.html#timeoutinms" class="tsd-kind-icon">timeout<wbr>InMs</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,7 +102,7 @@
 					<div class="tsd-signature tsd-kind-icon">max<wbr>Retries<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/489fd5649c/sdk/eventhub/event-hubs/src/eventHubClient.ts#L33">eventHubClient.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/40fe1affb3/sdk/eventhub/event-hubs/src/eventHubClient.ts#L33">eventHubClient.ts:33</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -116,12 +117,28 @@
 					<div class="tsd-signature tsd-kind-icon">retry<wbr>Interval<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/489fd5649c/sdk/eventhub/event-hubs/src/eventHubClient.ts#L37">eventHubClient.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/40fe1affb3/sdk/eventhub/event-hubs/src/eventHubClient.ts#L37">eventHubClient.ts:37</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Number of milliseconds to wait between attempts.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="timeoutinms" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> timeout<wbr>InMs</h3>
+					<div class="tsd-signature tsd-kind-icon">timeout<wbr>InMs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/40fe1affb3/sdk/eventhub/event-hubs/src/eventHubClient.ts#L42">eventHubClient.ts:42</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Number of milliseconds to wait before declaring that current attempt has timed out which will trigger a retry
+							A minimum value of 60 seconds will be used if a value not greater than this is provided.</p>
 						</div>
 					</div>
 				</section>
@@ -187,6 +204,9 @@
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="retryoptions.html#retryinterval" class="tsd-kind-icon">retry<wbr>Interval</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="retryoptions.html#timeoutinms" class="tsd-kind-icon">timeout<wbr>InMs</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -199,6 +219,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="../globals.html#onmessage" class="tsd-kind-icon">On<wbr>Message</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#getretryattempttimeoutinms" class="tsd-kind-icon">get<wbr>Retry<wbr>Attempt<wbr>Timeout<wbr>InMs</a>
 					</li>
 				</ul>
 			</nav>
