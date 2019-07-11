@@ -102,9 +102,12 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="retryconfig.html#connectionhost" class="tsd-kind-icon">connection<wbr>Host</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="retryconfig.html#connectionid" class="tsd-kind-icon">connection<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="retryconfig.html#delayinseconds" class="tsd-kind-icon">delay<wbr>InSeconds</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="retryconfig.html#maxexponentialretrydelayinms" class="tsd-kind-icon">max<wbr>Exponential<wbr>Retry<wbr>Delay<wbr>InMs</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="retryconfig.html#maxretries" class="tsd-kind-icon">max<wbr>Retries</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="retryconfig.html#minexponentialretrydelayinms" class="tsd-kind-icon">min<wbr>Exponential<wbr>Retry<wbr>Delay<wbr>InMs</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="retryconfig.html#operation" class="tsd-kind-icon">operation</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="retryconfig.html#operationtype" class="tsd-kind-icon">operation<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="retryconfig.html#retrypolicy" class="tsd-kind-icon">retry<wbr>Policy</a></li>
 							</ul>
 						</section>
 					</div>
@@ -118,7 +121,7 @@
 					<div class="tsd-signature tsd-kind-icon">connection<wbr>Host<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/59eec86f2b/sdk/core/core-amqp/src/retry.ts#L76">retry.ts:76</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/489fd5649c/sdk/core/core-amqp/src/retry.ts#L92">retry.ts:92</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -136,7 +139,7 @@
 					<div class="tsd-signature tsd-kind-icon">connection<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/59eec86f2b/sdk/core/core-amqp/src/retry.ts#L56">retry.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/489fd5649c/sdk/core/core-amqp/src/retry.ts#L70">retry.ts:70</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -154,14 +157,34 @@
 					<div class="tsd-signature tsd-kind-icon">delay<wbr>InSeconds<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/59eec86f2b/sdk/core/core-amqp/src/retry.ts#L71">retry.ts:71</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/489fd5649c/sdk/core/core-amqp/src/retry.ts#L87">retry.ts:87</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<dl class="tsd-comment-tags">
 							<dt>property</dt>
 							<dd><p>{number} [delayInSeconds] Amount of time to wait in seconds before making the
-								next attempt. Default: 15.</p>
+									next attempt. Default: 30.
+									When <code>retryPolicy</code> option is set to <code>ExponentialRetryPolicy</code>, \
+								this is used to compute the exponentially increasing delays between retries.</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="maxexponentialretrydelayinms" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> max<wbr>Exponential<wbr>Retry<wbr>Delay<wbr>InMs</h3>
+					<div class="tsd-signature tsd-kind-icon">max<wbr>Exponential<wbr>Retry<wbr>Delay<wbr>InMs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/489fd5649c/sdk/core/core-amqp/src/retry.ts#L101">retry.ts:101</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>property</dt>
+							<dd><p>{number} [maxExponentialRetryDelayInMs] Denotes the maximum delay between retries
+								that the retry attempts will be capped at. Applicable only when performing exponential retry.</p>
 							</dd>
 						</dl>
 					</div>
@@ -172,7 +195,7 @@
 					<div class="tsd-signature tsd-kind-icon">max<wbr>Retries<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/59eec86f2b/sdk/core/core-amqp/src/retry.ts#L66">retry.ts:66</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/489fd5649c/sdk/core/core-amqp/src/retry.ts#L80">retry.ts:80</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -185,12 +208,30 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="minexponentialretrydelayinms" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> min<wbr>Exponential<wbr>Retry<wbr>Delay<wbr>InMs</h3>
+					<div class="tsd-signature tsd-kind-icon">min<wbr>Exponential<wbr>Retry<wbr>Delay<wbr>InMs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/489fd5649c/sdk/core/core-amqp/src/retry.ts#L106">retry.ts:106</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>property</dt>
+							<dd><p>{number} [minExponentialRetryDelayInMs] Denotes the minimum delay between retries
+								to use. Applicable only when performing exponential retry.</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="operation" class="tsd-anchor"></a>
 					<h3>operation</h3>
 					<div class="tsd-signature tsd-kind-icon">operation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/59eec86f2b/sdk/core/core-amqp/src/retry.ts#L51">retry.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/489fd5649c/sdk/core/core-amqp/src/retry.ts#L65">retry.ts:65</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -222,7 +263,7 @@
 					<div class="tsd-signature tsd-kind-icon">operation<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="../enums/retryoperationtype.html" class="tsd-signature-type">RetryOperationType</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/59eec86f2b/sdk/core/core-amqp/src/retry.ts#L61">retry.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/489fd5649c/sdk/core/core-amqp/src/retry.ts#L75">retry.ts:75</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -230,6 +271,23 @@
 							<dt>property</dt>
 							<dd><p>{RetryOperationType} operationType The name/type of operation to be performed.
 								Extremely useful in providing better debug logs.</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="retrypolicy" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> retry<wbr>Policy</h3>
+					<div class="tsd-signature tsd-kind-icon">retry<wbr>Policy<span class="tsd-signature-symbol">:</span> <a href="../enums/retrypolicy.html" class="tsd-signature-type">RetryPolicy</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/489fd5649c/sdk/core/core-amqp/src/retry.ts#L96">retry.ts:96</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<dl class="tsd-comment-tags">
+							<dt>property</dt>
+							<dd><p>{RetryPolicy} [retryPolicy] Denotes which retry policy to apply. Default is <code>LinearRetryPolicy</code></p>
 							</dd>
 						</dl>
 					</div>
@@ -261,13 +319,22 @@
 								<a href="retryconfig.html#delayinseconds" class="tsd-kind-icon">delay<wbr>InSeconds</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="retryconfig.html#maxexponentialretrydelayinms" class="tsd-kind-icon">max<wbr>Exponential<wbr>Retry<wbr>Delay<wbr>InMs</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="retryconfig.html#maxretries" class="tsd-kind-icon">max<wbr>Retries</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="retryconfig.html#minexponentialretrydelayinms" class="tsd-kind-icon">min<wbr>Exponential<wbr>Retry<wbr>Delay<wbr>InMs</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="retryconfig.html#operation" class="tsd-kind-icon">operation</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="retryconfig.html#operationtype" class="tsd-kind-icon">operation<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="retryconfig.html#retrypolicy" class="tsd-kind-icon">retry<wbr>Policy</a>
 							</li>
 						</ul>
 					</li>
