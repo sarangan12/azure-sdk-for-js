@@ -189,6 +189,8 @@
 <span class="hljs-keyword">await</span> client.getPartitionInformation(<span class="hljs-string">"partitionId"</span>);</code></pre>
 				<p><strong>Notes:</strong> For scalable and efficient receiving, please take a look at <a href="https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-processor-host">azure-event-processor-host</a>. The Event Processor host, internally uses the streaming receiver to receive events.</p>
 				<h2 id="troubleshooting">Troubleshooting</h2>
+				<h3 id="amqp-dependencies">AMQP Dependencies</h3>
+				<p>The Event Hubs library depends on the <a href="https://github.com/amqp/rhea-promise">rhea-promise</a> library for managing connections, sending and receiving events over the <a href="http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf">AMQP</a> protocol.</p>
 				<h3 id="enable-logs">Enable logs</h3>
 				<p>You can set the following environment variable to get the debug logs when using this library.</p>
 				<ul>
@@ -225,6 +227,8 @@
 				<p>Please take a look at the <a href="https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/eventhub/event-hubs/samples">samples</a>
 					directory for detailed examples on how to use this library to send and receive events to/from
 				<a href="https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about">Event Hubs</a>.</p>
+				<h2 id="contributing">Contributing</h2>
+				<p>If you&#39;d like to contribute to this library, please read the <a href="../../../CONTRIBUTING.md">contributing guide</a> to learn more about how to build and test the code.</p>
 				<p><img src="https://azure-sdk-impressions.azurewebsites.net/api/impressions/azure-sdk-for-js/sdk/eventhub/event-hubs/README.png" alt="Impressions"></p>
 			</div>
 		</div>

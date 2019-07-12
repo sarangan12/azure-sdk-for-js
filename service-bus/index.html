@@ -206,6 +206,8 @@ receiver.registerMessageHandler(myMessageHandler, myErrorHandler);</code></pre>
 					<li><a href="#use-async-iterator">Use async iterator</a></li>
 				</ul>
 				<h2 id="troubleshooting">Troubleshooting</h2>
+				<h2 id="amqp-dependencies">AMQP Dependencies</h2>
+				<p>The Service Bus library depends on the <a href="https://github.com/amqp/rhea-promise">rhea-promise</a> library for managing connections, sending and receiving messages over the <a href="http://docs.oasis-open.org/amqp/core/v1.0/os/amqp-core-complete-v1.0-os.pdf">AMQP</a> protocol.</p>
 				<h3 id="enable-logs">Enable logs</h3>
 				<p>You can set the following environment variable to get the debug logs when using this library.</p>
 				<ul>
@@ -240,6 +242,8 @@ receiver.registerMessageHandler(myMessageHandler, myErrorHandler);</code></pre>
 				<p>Please take a look at the <a href="https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/servicebus/service-bus/samples">samples</a>
 					directory for detailed examples on how to use this library to send and receive messages to/from
 				<a href="https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview">Service Bus Queues, Topics and Subscriptions</a>.</p>
+				<h2 id="contributing">Contributing</h2>
+				<p>If you&#39;d like to contribute to this library, please read the <a href="../../../CONTRIBUTING.md">contributing guide</a> to learn more about how to build and test the code.</p>
 				<p><img src="https://azure-sdk-impressions.azurewebsites.net/api/impressions/azure-sdk-for-js/sdk/servicebus/service-bus/README.png" alt="Impressions"></p>
 			</div>
 		</div>
