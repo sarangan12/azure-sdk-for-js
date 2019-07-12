@@ -75,13 +75,13 @@
 					</li>
 					<li>Node.js 8 LTS or higher</li>
 				</ul>
-				<p><strong>NOTE:</strong> The credential implementations in this library are not yet supported in the browser.  We will provide browser-supported implementations for some in a future preview release.</p>
+				<p><strong>NOTE:</strong> The credential implementations in this library are not yet supported in the browser. We will provide browser-supported implementations for some in a future preview release.</p>
 				<h3 id="install-the-package">Install the package</h3>
 				<p>Install Azure Identity with <code>npm</code>:</p>
 				<pre><code class="language-sh">npm install --save @azure/identity</code></pre>
 				<h2 id="key-concepts">Key concepts</h2>
 				<h3 id="credentials">Credentials</h3>
-				<p>Azure Identity offers a variety of credential classes that are accepted by Azure SDK data plane clients. Each client library documents its Azure Identity integration in its README and samples.  Azure SDK management plane libraries (those starting with <code>@azure/arm-*</code>)
+				<p>Azure Identity offers a variety of credential classes that are accepted by Azure SDK data plane clients. Each client library documents its Azure Identity integration in its README and samples. Azure SDK management plane libraries (those starting with <code>@azure/arm-*</code>)
 				do not accept these credentials.</p>
 				<p>Credentials differ mostly in configuration:</p>
 				<table>
@@ -120,7 +120,7 @@
 				</tbody></table>
 				<p>Credentials can be chained and tried in turn until one succeeds; see <a href="#chaining-credentials">chaining credentials</a> for details.</p>
 				<h3 id="defaultazurecredential">DefaultAzureCredential</h3>
-				<p><code>DefaultAzureCredential</code> is appropriate for most scenarios. It supports authenticating as a service principal or managed identity. To authenticate as a service principal, provide configuration in environment variables as described in the next section.  Currently this credential attempts to use the <code>EnvironmentCredential</code> and <code>ManagedIdentityCredential</code>, in that order.</p>
+				<p><code>DefaultAzureCredential</code> is appropriate for most scenarios. It supports authenticating as a service principal or managed identity. To authenticate as a service principal, provide configuration in environment variables as described in the next section. Currently this credential attempts to use the <code>EnvironmentCredential</code> and <code>ManagedIdentityCredential</code>, in that order.</p>
 				<p>Authenticating as a managed identity requires no configuration, but does require platform support. See the <a href="https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities">managed identity documentation</a> for more information.</p>
 				<h3 id="environment-variables">Environment variables</h3>
 				<p><code>DefaultAzureCredential</code> and <code>EnvironmentCredential</code> are configured for service principal authentication with these environment variables:</p>
@@ -149,7 +149,7 @@
 				<pre><code class="language-javascript"><span class="hljs-comment">// The default credential first checks environment variables for configuration as described above.</span>
 <span class="hljs-comment">// If environment configuration is incomplete, it will try managed identity.</span>
 <span class="hljs-keyword">const</span> { KeysClient } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@azure/keyvault-keys"</span>);
-<span class="hljs-keyword">const</span> { DefaultAzureCredential } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@azure/identity'</span>);
+<span class="hljs-keyword">const</span> { DefaultAzureCredential } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@azure/identity"</span>);
 
 <span class="hljs-comment">// Azure SDK clients accept the credential as a parameter</span>
 <span class="hljs-keyword">const</span> credential = <span class="hljs-keyword">new</span> DefaultAzureCredential();
@@ -157,18 +157,22 @@
 <span class="hljs-keyword">const</span> getResult = <span class="hljs-keyword">await</span> client.getKey(<span class="hljs-string">"MyKeyName"</span>);</code></pre>
 				<h3 id="authenticating-as-a-service-principal-">Authenticating as a service principal:</h3>
 				<pre><code class="language-javascript"><span class="hljs-comment">// Using a client secret</span>
-<span class="hljs-keyword">const</span> { ClientSecretCredential } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@azure/identity'</span>);
+<span class="hljs-keyword">const</span> { ClientSecretCredential } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@azure/identity"</span>);
 <span class="hljs-keyword">const</span> credential = <span class="hljs-keyword">new</span> ClientSecretCredential(tenantId, clientId, clientSecret);
 
 <span class="hljs-comment">// Using a PEM-encoded certificate with a private key, not password protected</span>
-<span class="hljs-keyword">const</span> { ClientCertificateCredential } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@azure/identity'</span>);
-<span class="hljs-keyword">const</span> credential = <span class="hljs-keyword">new</span> ClientCertificateCredential(tenantId, clientId, <span class="hljs-string">"/app/certs/certificate.pem"</span>)
+<span class="hljs-keyword">const</span> { ClientCertificateCredential } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@azure/identity"</span>);
+<span class="hljs-keyword">const</span> credential = <span class="hljs-keyword">new</span> ClientCertificateCredential(
+  tenantId,
+  clientId,
+  <span class="hljs-string">"/app/certs/certificate.pem"</span>
+);
 
 <span class="hljs-comment">// Using environment variables (see "Environment variables" above for variable names)</span>
-<span class="hljs-keyword">const</span> { EnvironmentCredential } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@azure/identity'</span>);
+<span class="hljs-keyword">const</span> { EnvironmentCredential } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@azure/identity"</span>);
 <span class="hljs-keyword">const</span> credential = <span class="hljs-keyword">new</span> EnvironmentCredential();</code></pre>
 				<h3 id="chaining-credentials-">Chaining credentials:</h3>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { ClientSecretCredential, ChainedTokenCredential } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@azure/identity'</span>);
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> { ClientSecretCredential, ChainedTokenCredential } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@azure/identity"</span>);
 
 <span class="hljs-comment">// When an access token is requested, the chain will try each</span>
 <span class="hljs-comment">// credential in order, stopping when one provides a token</span>
@@ -181,18 +185,18 @@
 <span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> KeysClient(vaultUrl, credentialChain);</code></pre>
 				<h2 id="troubleshooting">Troubleshooting</h2>
 				<h3 id="general">General</h3>
-				<p>Credentials raise <code>AuthenticationError</code> when they fail to authenticate.  This class has a <code>message</code> field which describes why authentication failed.  An <code>AggregateAuthenticationError</code> will be raised by <code>ChainedTokenCredential</code> with an <code>errors</code> field containing an array of errors from each credential in the chain.</p>
+				<p>Credentials raise <code>AuthenticationError</code> when they fail to authenticate. This class has a <code>message</code> field which describes why authentication failed. An <code>AggregateAuthenticationError</code> will be raised by <code>ChainedTokenCredential</code> with an <code>errors</code> field containing an array of errors from each credential in the chain.</p>
 				<h2 id="next-steps">Next steps</h2>
 				<h3 id="provide-feedback">Provide Feedback</h3>
 				<p>If you encounter bugs or have suggestions, please <a href="https://github.com/Azure/azure-sdk-for-js/issues">open an issue</a>.</p>
 				<h2 id="contributing">Contributing</h2>
-				<p>This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+				<p>This project welcomes contributions and suggestions. Most contributions require you to agree to a
 					Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
 				the rights to use your contribution. For details, visit <a href="https://cla.microsoft.com">https://cla.microsoft.com</a>.</p>
 				<p>When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
 					a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
 				provided by the bot. You will only need to do this once across all repos using our CLA.</p>
-				<p>If you&#39;d like to contribute to this library, please read the the <a href="../../../CONTRIBUTING.md">contributing guide</a> to learn more about how to build and test the code.</p>
+				<p>If you&#39;d like to contribute to this library, please read the <a href="../../../CONTRIBUTING.md">contributing guide</a> to learn more about how to build and test the code.</p>
 				<p>This project has adopted the <a href="https://opensource.microsoft.com/codeofconduct/">Microsoft Open Source Code of Conduct</a>.
 					For more information, see the <a href="https://opensource.microsoft.com/codeofconduct/faq/">Code of Conduct FAQ</a>
 				or contact <a href="mailto:opencode@microsoft.com">opencode@microsoft.com</a> with any additional questions or comments.</p>

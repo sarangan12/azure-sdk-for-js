@@ -101,7 +101,7 @@
 <span class="hljs-keyword">const</span> clientId = process.env[<span class="hljs-string">"CLIENT_ID"</span>] || <span class="hljs-string">""</span>;
 <span class="hljs-keyword">const</span> clientSecret = process.env[<span class="hljs-string">"CLIENT_SECRET"</span>] || <span class="hljs-string">""</span>;
 <span class="hljs-keyword">const</span> tenantId = process.env[<span class="hljs-string">"TENANT_ID"</span>] || <span class="hljs-string">""</span>;
-<span class="hljs-keyword">const</span> vaultName = process.env[<span class="hljs-string">"KEYVAULT_NAME"</span>] || <span class="hljs-string">"&lt;keyvault-name&gt;"</span>
+<span class="hljs-keyword">const</span> vaultName = process.env[<span class="hljs-string">"KEYVAULT_NAME"</span>] || <span class="hljs-string">"&lt;keyvault-name&gt;"</span>;
 
 <span class="hljs-keyword">const</span> url = <span class="hljs-string">`https://<span class="hljs-subst">${vaultName}</span>.vault.azure.net`</span>;
 <span class="hljs-keyword">const</span> credential = <span class="hljs-keyword">await</span> msRestNodeAuth.loginWithServicePrincipalSecret(
@@ -109,7 +109,7 @@
   clientSecret,
   tenantId,
   {
-    tokenAudience: <span class="hljs-string">'https://vault.azure.net'</span>
+    tokenAudience: <span class="hljs-string">"https://vault.azure.net"</span>
   }
 );
 
@@ -166,12 +166,14 @@
 				<pre><code class="language-bash"><span class="hljs-built_in">export</span> DEBUG=azure:keyvault-secrets:error,azure-amqp-common:error,rhea-promise:error,rhea:events,rhea:frames,rhea:io,rhea:flow</code></pre>
 				<h3 id="logging-to-a-file">Logging to a file</h3>
 				<ul>
-					<li>Set the <code>DEBUG</code> environment variable as shown above and then run your test script as follows:<ul>
+					<li><p>Set the <code>DEBUG</code> environment variable as shown above and then run your test script as follows:</p>
+						<ul>
 							<li>Logging statements from your test script go to <code>out.log</code> and logging statements from the sdk go to <code>debug.log</code>.<pre><code class="language-bash">node your-test-script.js &gt; out.log 2&gt;debug.log</code></pre>
 							</li>
 							<li>Logging statements from your test script and the sdk go to the same file <code>out.log</code> by redirecting stderr to stdout (&amp;1), and then redirect stdout to a file:<pre><code class="language-bash">node your-test-script.js &gt;out.log 2&gt;&amp;1</code></pre>
 							</li>
-							<li>Logging statements from your test script and the sdk go to the same file <code>out.log</code>.<pre><code class="language-bash">  node your-test-script.js &amp;&gt; out.log</code></pre>
+							<li><p>Logging statements from your test script and the sdk go to the same file <code>out.log</code>.</p>
+								<pre><code class="language-bash">  node your-test-script.js &amp;&gt; out.log</code></pre>
 							</li>
 						</ul>
 					</li>
@@ -187,6 +189,7 @@
 				<p>When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
 					a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
 				provided by the bot. You will only need to do this once across all repos using our CLA.</p>
+				<p>If you&#39;d like to contribute to this library, please read the <a href="../../../CONTRIBUTING.md">contributing guide</a> to learn more about how to build and test the code.</p>
 				<p>This project has adopted the <a href="https://opensource.microsoft.com/codeofconduct/">Microsoft Open Source Code of Conduct</a>.
 					For more information see the <a href="https://opensource.microsoft.com/codeofconduct/faq/">Code of Conduct FAQ</a> or
 				contact <a href="mailto:opencode@microsoft.com">opencode@microsoft.com</a> with any additional questions or comments.</p>

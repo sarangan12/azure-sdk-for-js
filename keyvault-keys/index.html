@@ -98,32 +98,29 @@
 				<h3 id="configuring-your-key-vault">Configuring your Key Vault</h3>
 				<p>Use the <a href="https://shell.azure.com/bash">Azure Cloud Shell</a> snippet below to create/get client secret credentials.</p>
 				<ul>
-					<li>Create a service principal and configure its access to Azure resources:<pre><code class="language-Bash"> az ad sp create-for-rbac -n &lt;your-application-name&gt; --skip-assignment</code></pre>
-						Output:<pre><code class="language-json"> {
-     <span class="hljs-attr">"appId"</span>: <span class="hljs-string">"generated-app-ID"</span>,
-     <span class="hljs-attr">"displayName"</span>: <span class="hljs-string">"dummy-app-name"</span>,
-     <span class="hljs-attr">"name"</span>: <span class="hljs-string">"http://dummy-app-name"</span>,
-     <span class="hljs-attr">"password"</span>: <span class="hljs-string">"random-password"</span>,
-     <span class="hljs-attr">"tenant"</span>: <span class="hljs-string">"tenant-ID"</span>
- }</code></pre>
-						<ul>
-							<li>Use the above returned credentials information to set <strong>AZURE_CLIENT_ID</strong>(appId), <strong>AZURE_CLIENT_SECRET</strong>(password) and <strong>AZURE_TENANT_ID</strong>(tenant) environment variables. The following example shows a way to do this in Bash:<pre><code class="language-Bash"><span class="hljs-built_in">export</span> AZURE_CLIENT_ID=<span class="hljs-string">"generated-app-ID"</span>
-<span class="hljs-built_in">export</span> AZURE_CLIENT_SECRET=<span class="hljs-string">"random-password"</span>
-<span class="hljs-built_in">export</span> AZURE_TENANT_ID=<span class="hljs-string">"tenant-ID"</span></code></pre>
-							</li>
-						</ul>
+					<li>Create a service principal and configure its access to Azure resources:<pre><code class="language-Bash">az ad sp create-for-rbac -n &lt;your-application-name&gt; --skip-assignment</code></pre>
+						Output:<pre><code class="language-json">{
+  <span class="hljs-attr">"appId"</span>: <span class="hljs-string">"generated-app-ID"</span>,
+  <span class="hljs-attr">"displayName"</span>: <span class="hljs-string">"dummy-app-name"</span>,
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"http://dummy-app-name"</span>,
+  <span class="hljs-attr">"password"</span>: <span class="hljs-string">"random-password"</span>,
+  <span class="hljs-attr">"tenant"</span>: <span class="hljs-string">"tenant-ID"</span>
+}</code></pre>
 					</li>
-				</ul>
-				<ul>
+					<li><p>Use the above returned credentials information to set <strong>AZURE_CLIENT_ID</strong>(appId), <strong>AZURE_CLIENT_SECRET</strong>(password) and <strong>AZURE_TENANT_ID</strong>(tenant) environment variables. The following example shows a way to do this in Bash:</p>
+						<pre><code class="language-Bash">  <span class="hljs-built_in">export</span> AZURE_CLIENT_ID=<span class="hljs-string">"generated-app-ID"</span>
+  <span class="hljs-built_in">export</span> AZURE_CLIENT_SECRET=<span class="hljs-string">"random-password"</span>
+  <span class="hljs-built_in">export</span> AZURE_TENANT_ID=<span class="hljs-string">"tenant-ID"</span></code></pre>
+					</li>
 					<li><p>Grant the above mentioned application authorization to perform secret operations on the keyvault:</p>
-						<pre><code class="language-Bash">  az keyvault <span class="hljs-built_in">set</span>-policy --name &lt;your-key-vault-name&gt; --spn <span class="hljs-variable">$AZURE_CLIENT_ID</span> --secret-permissions backup delete get list <span class="hljs-built_in">set</span></code></pre>
+						<pre><code class="language-Bash">az keyvault <span class="hljs-built_in">set</span>-policy --name &lt;your-key-vault-name&gt; --spn <span class="hljs-variable">$AZURE_CLIENT_ID</span> --secret-permissions backup delete get list <span class="hljs-built_in">set</span></code></pre>
 						<blockquote>
 							<p>--secret-permissions:
 							Accepted values: backup, delete, get, list, purge, recover, restore, set</p>
 						</blockquote>
 					</li>
 					<li><p>Use the above mentioned Key Vault name to retrieve details of your Vault which also contains your Key Vault URL:</p>
-						<pre><code class="language-Bash">  az keyvault show --name &lt;your-key-vault-name&gt;</code></pre>
+						<pre><code class="language-Bash">az keyvault show --name &lt;your-key-vault-name&gt;</code></pre>
 					</li>
 				</ul>
 				<h3 id="authenticate-the-client">Authenticate the client</h3>
@@ -160,7 +157,7 @@
 				<p>Key vaults allow deleting keys so that they are no longer available.</p>
 				<p>In key vaults with &#39;soft delete&#39; enabled, keys are not immediately removed but instead marked simply as &#39;deleted&#39;. These deleted keys can be listed, purged, and recovered.</p>
 				<h2 id="examples">Examples</h2>
-				<p>The following sections provide code snippets that cover some of the common tasks using Azure KeyVault Keys. </p>
+				<p>The following sections provide code snippets that cover some of the common tasks using Azure KeyVault Keys.</p>
 				<p>Once you have authenticated and created an instance of an <code>KeysClient</code> class (see &quot;Authenticate the client&quot; above), you can create, read, update, and delete keys:</p>
 				<h3 id="create-a-key">Create a key</h3>
 				<p><code>createKey</code> creates a Key to be stored in the Azure Key Vault. If a key with the same name already exists, then a new version of the key is created.</p>
@@ -184,8 +181,7 @@
 }</code></pre>
 				<h3 id="update-a-key">Update a key</h3>
 				<p><code>updateKey</code> updates the attributes of a key.</p>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> updatedKey = <span class="hljs-keyword">await</span> client.updateKeyAttributes(keyName, result.version, { <span class="hljs-attr">enabled</span>: <span class="hljs-literal">false</span> });
-</code></pre>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> updatedKey = <span class="hljs-keyword">await</span> client.updateKeyAttributes(keyName, result.version, { <span class="hljs-attr">enabled</span>: <span class="hljs-literal">false</span> });</code></pre>
 				<h3 id="delete-a-key">Delete a key</h3>
 				<p><code>deleteKey</code> deletes a key previously stored in the Key Vault. When <a href="https://docs.microsoft.com/en-us/azure/key-vault/key-vault-ovw-soft-delete">soft-delete</a> is not enabled for the Key Vault, this operation permanently deletes the key.</p>
 				<pre><code class="language-javascript"><span class="hljs-keyword">await</span> client.deleteKey(keyName);</code></pre>
@@ -210,12 +206,14 @@
 				<pre><code class="language-bash"><span class="hljs-built_in">export</span> DEBUG=azure:keyvault-keys:error,azure-amqp-common:error,rhea-promise:error,rhea:events,rhea:frames,rhea:io,rhea:flow</code></pre>
 				<h3 id="logging-to-a-file">Logging to a file</h3>
 				<ul>
-					<li>Set the <code>DEBUG</code> environment variable as shown above and then run your test script as follows:<ul>
+					<li><p>Set the <code>DEBUG</code> environment variable as shown above and then run your test script as follows:</p>
+						<ul>
 							<li>Logging statements from your test script go to <code>out.log</code> and logging statements from the sdk go to <code>debug.log</code>.<pre><code class="language-bash">node your-test-script.js &gt; out.log 2&gt;debug.log</code></pre>
 							</li>
 							<li>Logging statements from your test script and the sdk go to the same file <code>out.log</code> by redirecting stderr to stdout (&amp;1), and then redirect stdout to a file:<pre><code class="language-bash">node your-test-script.js &gt;out.log 2&gt;&amp;1</code></pre>
 							</li>
-							<li>Logging statements from your test script and the sdk go to the same file <code>out.log</code>.<pre><code class="language-bash">  node your-test-script.js &amp;&gt; out.log</code></pre>
+							<li><p>Logging statements from your test script and the sdk go to the same file <code>out.log</code>.</p>
+								<pre><code class="language-bash">  node your-test-script.js &amp;&gt; out.log</code></pre>
 							</li>
 						</ul>
 					</li>
@@ -234,6 +232,7 @@
 				<p>When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
 					a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
 				provided by the bot. You will only need to do this once across all repos using our CLA.</p>
+				<p>If you&#39;d like to contribute to this library, please read the <a href="../../../CONTRIBUTING.md">contributing guide</a> to learn more about how to build and test the code.</p>
 				<p>This project has adopted the <a href="https://opensource.microsoft.com/codeofconduct/">Microsoft Open Source Code of Conduct</a>.
 					For more information see the <a href="https://opensource.microsoft.com/codeofconduct/faq/">Code of Conduct FAQ</a> or
 				contact <a href="mailto:opencode@microsoft.com">opencode@microsoft.com</a> with any additional questions or comments.</p>
