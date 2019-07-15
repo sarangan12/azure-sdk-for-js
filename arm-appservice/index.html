@@ -70,11 +70,13 @@
 					<li>Browser JavaScript</li>
 				</ul>
 				<h3 id="how-to-install">How to Install</h3>
-				<pre><code><span class="hljs-selector-tag">npm</span> <span class="hljs-selector-tag">install</span> @<span class="hljs-keyword">azure</span>/<span class="hljs-keyword">arm</span>-<span class="hljs-keyword">appservice</span></code></pre><h3 id="how-to-use">How to use</h3>
+				<pre><code class="language-bash">npm install @azure/arm-appservice</code></pre>
+				<h3 id="how-to-use">How to use</h3>
 				<h4 id="nodejs-authentication-client-creation-and-list-appservicecertificateorders-as-an-example-written-in-typescript-">nodejs - Authentication, client creation and list appServiceCertificateOrders as an example written in TypeScript.</h4>
 				<h5 id="install-azure-ms-rest-nodeauth">Install @azure/ms-rest-nodeauth</h5>
-				<pre><code><span class="hljs-selector-tag">npm</span> <span class="hljs-selector-tag">install</span> @<span class="hljs-keyword">azure</span>/<span class="hljs-keyword">ms</span>-<span class="hljs-keyword">rest</span>-<span class="hljs-keyword">nodeauth</span></code></pre><h5 id="sample-code">Sample code</h5>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> msRest <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/ms-rest-js"</span>;
+				<pre><code class="language-bash">npm install @azure/ms-rest-nodeauth</code></pre>
+				<h5 id="sample-code">Sample code</h5>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> msRest <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/ms-rest-js"</span>;
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> msRestAzure <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/ms-rest-azure-js"</span>;
 <span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> msRestNodeAuth <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/ms-rest-nodeauth"</span>;
 <span class="hljs-keyword">import</span> { WebSiteManagementClient, WebSiteManagementModels, WebSiteManagementMappers } <span class="hljs-keyword">from</span> <span class="hljs-string">"@azure/arm-appservice"</span>;
@@ -91,7 +93,8 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 });</code></pre>
 				<h4 id="browser-authentication-client-creation-and-list-appservicecertificateorders-as-an-example-written-in-javascript-">browser - Authentication, client creation and list appServiceCertificateOrders as an example written in JavaScript.</h4>
 				<h5 id="install-azure-ms-rest-browserauth">Install @azure/ms-rest-browserauth</h5>
-				<pre><code><span class="hljs-selector-tag">npm</span> <span class="hljs-selector-tag">install</span> @<span class="hljs-keyword">azure</span>/<span class="hljs-keyword">ms</span>-<span class="hljs-keyword">rest</span>-<span class="hljs-keyword">browserauth</span></code></pre><h5 id="sample-code">Sample code</h5>
+				<pre><code class="language-bash">npm install @azure/ms-rest-browserauth</code></pre>
+				<h5 id="sample-code">Sample code</h5>
 				<p>See <a href="https://github.com/Azure/ms-rest-browserauth">https://github.com/Azure/ms-rest-browserauth</a> to learn how to authenticate to Azure in the browser.</p>
 				<ul>
 					<li>index.html<pre><code class="language-html"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
@@ -269,13 +272,22 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="interfaces/providergetavailablestacksoptionalparams.html" class="tsd-kind-icon">Provider<wbr>Get<wbr>Available<wbr>Stacks<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
+						<a href="interfaces/recommendationsgetruledetailsbyhostingenvironmentoptionalparams.html" class="tsd-kind-icon">Recommendations<wbr>Get<wbr>Rule<wbr>Details<wbr>ByHosting<wbr>Environment<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
 						<a href="interfaces/recommendationsgetruledetailsbywebappoptionalparams.html" class="tsd-kind-icon">Recommendations<wbr>Get<wbr>Rule<wbr>Details<wbr>ByWeb<wbr>App<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/recommendationslisthistoryforhostingenvironmentoptionalparams.html" class="tsd-kind-icon">Recommendations<wbr>List<wbr>History<wbr>For<wbr>Hosting<wbr>Environment<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/recommendationslisthistoryforwebappoptionalparams.html" class="tsd-kind-icon">Recommendations<wbr>List<wbr>History<wbr>For<wbr>Web<wbr>App<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/recommendationslistoptionalparams.html" class="tsd-kind-icon">Recommendations<wbr>List<wbr>Optional<wbr>Params</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/recommendationslistrecommendedrulesforhostingenvironmentoptionalparams.html" class="tsd-kind-icon">Recommendations<wbr>List<wbr>Recommended<wbr>Rules<wbr>For<wbr>Hosting<wbr>Environment<wbr>Optional<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/recommendationslistrecommendedrulesforwebappoptionalparams.html" class="tsd-kind-icon">Recommendations<wbr>List<wbr>Recommended<wbr>Rules<wbr>For<wbr>Web<wbr>App<wbr>Optional<wbr>Params</a>
@@ -464,7 +476,19 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#appserviceenvironmentsgetdiagnosticsitemresponse" class="tsd-kind-icon">App<wbr>Service<wbr>Environments<wbr>Get<wbr>Diagnostics<wbr>Item<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#appserviceenvironmentsgetinboundnetworkdependenciesendpointsnextresponse" class="tsd-kind-icon">App<wbr>Service<wbr>Environments<wbr>Get<wbr>Inbound<wbr>Network<wbr>Dependencies<wbr>Endpoints<wbr>Next<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#appserviceenvironmentsgetinboundnetworkdependenciesendpointsresponse" class="tsd-kind-icon">App<wbr>Service<wbr>Environments<wbr>Get<wbr>Inbound<wbr>Network<wbr>Dependencies<wbr>Endpoints<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#appserviceenvironmentsgetmultirolepoolresponse" class="tsd-kind-icon">App<wbr>Service<wbr>Environments<wbr>Get<wbr>Multi<wbr>Role<wbr>Pool<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#appserviceenvironmentsgetoutboundnetworkdependenciesendpointsnextresponse" class="tsd-kind-icon">App<wbr>Service<wbr>Environments<wbr>Get<wbr>Outbound<wbr>Network<wbr>Dependencies<wbr>Endpoints<wbr>Next<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#appserviceenvironmentsgetoutboundnetworkdependenciesendpointsresponse" class="tsd-kind-icon">App<wbr>Service<wbr>Environments<wbr>Get<wbr>Outbound<wbr>Network<wbr>Dependencies<wbr>Endpoints<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#appserviceenvironmentsgetresponse" class="tsd-kind-icon">App<wbr>Service<wbr>Environments<wbr>Get<wbr>Response</a>
@@ -818,6 +842,15 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#databasetype" class="tsd-kind-icon">Database<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#deletedwebappsgetdeletedwebappbylocationresponse" class="tsd-kind-icon">Deleted<wbr>Web<wbr>Apps<wbr>Get<wbr>Deleted<wbr>Web<wbr>App<wbr>ByLocation<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#deletedwebappslistbylocationnextresponse" class="tsd-kind-icon">Deleted<wbr>Web<wbr>Apps<wbr>List<wbr>ByLocation<wbr>Next<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#deletedwebappslistbylocationresponse" class="tsd-kind-icon">Deleted<wbr>Web<wbr>Apps<wbr>List<wbr>ByLocation<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#deletedwebappslistnextresponse" class="tsd-kind-icon">Deleted<wbr>Web<wbr>Apps<wbr>List<wbr>Next<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
@@ -1121,7 +1154,16 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#publishingprofileformat" class="tsd-kind-icon">Publishing<wbr>Profile<wbr>Format</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#recommendationsgetruledetailsbyhostingenvironmentresponse" class="tsd-kind-icon">Recommendations<wbr>Get<wbr>Rule<wbr>Details<wbr>ByHosting<wbr>Environment<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#recommendationsgetruledetailsbywebappresponse" class="tsd-kind-icon">Recommendations<wbr>Get<wbr>Rule<wbr>Details<wbr>ByWeb<wbr>App<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#recommendationslisthistoryforhostingenvironmentnextresponse" class="tsd-kind-icon">Recommendations<wbr>List<wbr>History<wbr>For<wbr>Hosting<wbr>Environment<wbr>Next<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#recommendationslisthistoryforhostingenvironmentresponse" class="tsd-kind-icon">Recommendations<wbr>List<wbr>History<wbr>For<wbr>Hosting<wbr>Environment<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#recommendationslisthistoryforwebappnextresponse" class="tsd-kind-icon">Recommendations<wbr>List<wbr>History<wbr>For<wbr>Web<wbr>App<wbr>Next<wbr>Response</a>
@@ -1133,6 +1175,12 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#recommendationslistnextresponse" class="tsd-kind-icon">Recommendations<wbr>List<wbr>Next<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#recommendationslistrecommendedrulesforhostingenvironmentnextresponse" class="tsd-kind-icon">Recommendations<wbr>List<wbr>Recommended<wbr>Rules<wbr>For<wbr>Hosting<wbr>Environment<wbr>Next<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#recommendationslistrecommendedrulesforhostingenvironmentresponse" class="tsd-kind-icon">Recommendations<wbr>List<wbr>Recommended<wbr>Rules<wbr>For<wbr>Hosting<wbr>Environment<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#recommendationslistrecommendedrulesforwebappnextresponse" class="tsd-kind-icon">Recommendations<wbr>List<wbr>Recommended<wbr>Rules<wbr>For<wbr>Web<wbr>App<wbr>Next<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
@@ -1140,6 +1188,9 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#recommendationslistresponse" class="tsd-kind-icon">Recommendations<wbr>List<wbr>Response</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#redundancymode" class="tsd-kind-icon">Redundancy<wbr>Mode</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#renderingtype" class="tsd-kind-icon">Rendering<wbr>Type</a>
@@ -1236,6 +1287,9 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#usagestate" class="tsd-kind-icon">Usage<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#validatecontainersettingsresponse" class="tsd-kind-icon">Validate<wbr>Container<wbr>Settings<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#validateresourcetypes" class="tsd-kind-icon">Validate<wbr>Resource<wbr>Types</a>
@@ -2612,6 +2666,12 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#enabledconfig" class="tsd-kind-icon">Enabled<wbr>Config</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#endpointdependency" class="tsd-kind-icon">Endpoint<wbr>Dependency</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#endpointdetail" class="tsd-kind-icon">Endpoint<wbr>Detail</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#errorentity" class="tsd-kind-icon">Error<wbr>Entity</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
@@ -2631,6 +2691,9 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#functionsecrets" class="tsd-kind-icon">Function<wbr>Secrets</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#geodistribution" class="tsd-kind-icon">Geo<wbr>Distribution</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#georegion" class="tsd-kind-icon">Geo<wbr>Region</a>
@@ -2687,6 +2750,12 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#identifiercollection" class="tsd-kind-icon">Identifier<wbr>Collection</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#inboundenvironmentendpoint" class="tsd-kind-icon">Inbound<wbr>Environment<wbr>Endpoint</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#inboundenvironmentendpointcollection" class="tsd-kind-icon">Inbound<wbr>Environment<wbr>Endpoint<wbr>Collection</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#ipsecurityrestriction" class="tsd-kind-icon">Ip<wbr>Security<wbr>Restriction</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
@@ -2709,6 +2778,9 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#managedserviceidentity" class="tsd-kind-icon">Managed<wbr>Service<wbr>Identity</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#managedserviceidentityuserassignedidentitiesvalue" class="tsd-kind-icon">Managed<wbr>Service<wbr>Identity<wbr>User<wbr>Assigned<wbr>Identities<wbr>Value</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#metricavailabilily" class="tsd-kind-icon">Metric<wbr>Availabilily</a>
@@ -2748,6 +2820,12 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#operation" class="tsd-kind-icon">Operation</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#outboundenvironmentendpoint" class="tsd-kind-icon">Outbound<wbr>Environment<wbr>Endpoint</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#outboundenvironmentendpointcollection" class="tsd-kind-icon">Outbound<wbr>Environment<wbr>Endpoint<wbr>Collection</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#perfmoncountercollection" class="tsd-kind-icon">Perf<wbr>Mon<wbr>Counter<wbr>Collection</a>
@@ -3068,6 +3146,9 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#user" class="tsd-kind-icon">User</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#validatecontainersettingsrequest" class="tsd-kind-icon">Validate<wbr>Container<wbr>Settings<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#validaterequest" class="tsd-kind-icon">Validate<wbr>Request</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
@@ -3134,7 +3215,10 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#analysisname" class="tsd-kind-icon">analysis<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
-						<a href="globals.html#apiversion" class="tsd-kind-icon">api<wbr>Version</a>
+						<a href="globals.html#apiversion0" class="tsd-kind-icon">api<wbr>Version0</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#apiversion1" class="tsd-kind-icon">api<wbr>Version1</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#backupid" class="tsd-kind-icon">backup<wbr>Id</a>
@@ -3153,6 +3237,9 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#deletemetrics" class="tsd-kind-icon">delete<wbr>Metrics</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#deletedsiteid" class="tsd-kind-icon">deleted<wbr>Site<wbr>Id</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#detailed" class="tsd-kind-icon">detailed</a>
@@ -3191,6 +3278,9 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#entityname" class="tsd-kind-icon">entity<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#environmentname" class="tsd-kind-icon">environment<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#expiredonly" class="tsd-kind-icon">expired<wbr>Only</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
@@ -3218,6 +3308,9 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 						<a href="globals.html#hostname1" class="tsd-kind-icon">host<wbr>Name1</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#hostingenvironmentname" class="tsd-kind-icon">hosting<wbr>Environment<wbr>Name</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#id" class="tsd-kind-icon">id</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
@@ -3234,6 +3327,9 @@ msRestNodeAuth.interactiveLogin().then(<span class="hljs-function">(<span class=
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#linuxworkersenabled" class="tsd-kind-icon">linux<wbr>Workers<wbr>Enabled</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#location" class="tsd-kind-icon">location</a>
 					</li>
 					<li class=" tsd-kind-object-literal">
 						<a href="globals.html#maxframelength" class="tsd-kind-icon">max<wbr>Frame<wbr>Length</a>
