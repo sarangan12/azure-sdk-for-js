@@ -106,6 +106,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="eventhubproducer.html#close" class="tsd-kind-icon">close</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="eventhubproducer.html#createbatch" class="tsd-kind-icon">create<wbr>Batch</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="eventhubproducer.html#send" class="tsd-kind-icon">send</a></li>
 							</ul>
 						</section>
@@ -124,7 +125,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/403285543c/sdk/eventhub/event-hubs/src/sender.ts#L42">sender.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/e1e7386837/sdk/eventhub/event-hubs/src/sender.ts#L43">sender.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -153,7 +154,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/403285543c/sdk/eventhub/event-hubs/src/sender.ts#L93">sender.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/e1e7386837/sdk/eventhub/event-hubs/src/sender.ts#L131">sender.ts:131</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -173,16 +174,49 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="send" class="tsd-anchor"></a>
-					<h3>send</h3>
+					<a name="createbatch" class="tsd-anchor"></a>
+					<h3>create<wbr>Batch</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">send<span class="tsd-signature-symbol">(</span>eventData<span class="tsd-signature-symbol">: </span><a href="../interfaces/eventdata.html" class="tsd-signature-type">EventData</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/eventdata.html" class="tsd-signature-type">EventData</a><span class="tsd-signature-symbol">[]</span>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/sendoptions.html" class="tsd-signature-type">SendOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Batch<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/batchoptions.html" class="tsd-signature-type">BatchOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="eventdatabatch.html" class="tsd-signature-type">EventDataBatch</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/403285543c/sdk/eventhub/event-hubs/src/sender.ts#L76">sender.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/e1e7386837/sdk/eventhub/event-hubs/src/sender.ts#L68">sender.ts:68</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates an instance of EventDataBatch to which one can add events until the maximum supported size is reached.
+									The batch can be passed to the send method of the EventHubProducer to be sent to Azure Event Hubs</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <a href="../interfaces/batchoptions.html" class="tsd-signature-type">BatchOptions</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Options to define partition key and max message size.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="eventdatabatch.html" class="tsd-signature-type">EventDataBatch</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>Promise<EventDataBatch></p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="send" class="tsd-anchor"></a>
+					<h3>send</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">send<span class="tsd-signature-symbol">(</span>eventData<span class="tsd-signature-symbol">: </span><a href="../interfaces/eventdata.html" class="tsd-signature-type">EventData</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/eventdata.html" class="tsd-signature-type">EventData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="eventdatabatch.html" class="tsd-signature-type">EventDataBatch</a>, options<span class="tsd-signature-symbol">?: </span><a href="../interfaces/sendoptions.html" class="tsd-signature-type">SendOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Azure/azure-sdk-for-js/blob/e1e7386837/sdk/eventhub/event-hubs/src/sender.ts#L105">sender.ts:105</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -203,7 +237,10 @@
 									<dd><p>{Error} Thrown if the underlying connection or sender has been closed.</p>
 									</dd>
 									<dt>throws</dt>
-									<dd><p>{Error} Thrown if a partitionKey is provided when the producer was created with a partitionId.
+									<dd><p>{Error} Thrown if a partitionKey is provided when the producer was created with a partitionId.</p>
+									</dd>
+									<dt>throws</dt>
+									<dd><p>{Error} Thrown if batch was created with partitionKey different than the one provided in the options.
 										Create a new producer using the EventHubClient createProducer method.</p>
 									</dd>
 								</dl>
@@ -211,7 +248,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>eventData: <a href="../interfaces/eventdata.html" class="tsd-signature-type">EventData</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/eventdata.html" class="tsd-signature-type">EventData</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>eventData: <a href="../interfaces/eventdata.html" class="tsd-signature-type">EventData</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/eventdata.html" class="tsd-signature-type">EventData</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="eventdatabatch.html" class="tsd-signature-type">EventDataBatch</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>An individual event data or array of event data objects to send.</p>
 									</div>
@@ -242,6 +279,9 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
+						<a href="eventdatabatch.html" class="tsd-kind-icon">Event<wbr>Data<wbr>Batch</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="eventhubclient.html" class="tsd-kind-icon">Event<wbr>Hub<wbr>Client</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -259,6 +299,9 @@
 								<a href="eventhubproducer.html#close" class="tsd-kind-icon">close</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="eventhubproducer.html#createbatch" class="tsd-kind-icon">create<wbr>Batch</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="eventhubproducer.html#send" class="tsd-kind-icon">send</a>
 							</li>
 						</ul>
@@ -270,6 +313,9 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="receivehandler.html" class="tsd-kind-icon">Receive<wbr>Handler</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/batchoptions.html" class="tsd-kind-icon">Batch<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/eventdata.html" class="tsd-kind-icon">Event<wbr>Data</a>
