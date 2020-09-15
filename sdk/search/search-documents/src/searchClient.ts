@@ -8,12 +8,14 @@ import {
   InternalPipelineOptions,
   createPipelineFromOptions,
   OperationOptions,
-  operationOptionsToRequestOptionsBase
+  operationOptionsToRequestOptionsBase,
+  ServiceClientOptions,
+  bearerTokenAuthenticationPolicy
 } from "@azure/core-http";
 import { SearchClient as GeneratedClient } from "./generated/data/searchClient";
-import { KeyCredential } from "@azure/core-auth";
+import { KeyCredential, TokenCredential, isTokenCredential } from "@azure/core-auth";
 import { createSearchApiKeyCredentialPolicy } from "./searchApiKeyCredentialPolicy";
-import { SDK_VERSION } from "./constants";
+import { SDK_VERSION, DEFAULT_COGNITIVE_SCOPE } from "./constants";
 import { logger } from "./logger";
 import {
   AutocompleteResult,
@@ -105,7 +107,7 @@ export class SearchClient<T> {
   constructor(
     endpoint: string,
     indexName: string,
-    credential: KeyCredential,
+    credential: KeyCredential | TokenCredential,
     options: SearchClientOptions = {}
   ) {
     this.endpoint = endpoint;
@@ -138,10 +140,20 @@ export class SearchClient<T> {
       }
     };
 
-    const pipeline = createPipelineFromOptions(
-      internalPipelineOptions,
-      createSearchApiKeyCredentialPolicy(credential)
-    );
+    let pipeline: ServiceClientOptions;
+    
+    if(isTokenCredential(credential)) {
+      pipeline = createPipelineFromOptions(
+        internalPipelineOptions,
+        bearerTokenAuthenticationPolicy(credential, DEFAULT_COGNITIVE_SCOPE)
+      );
+    } else {
+      pipeline = createPipelineFromOptions(
+        internalPipelineOptions,
+        createSearchApiKeyCredentialPolicy(credential)
+      );
+    }
+
     if (Array.isArray(pipeline.requestPolicyFactories)) {
       pipeline.requestPolicyFactories.unshift(odataMetadataPolicy("none"));
     }
