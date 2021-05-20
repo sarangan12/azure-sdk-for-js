@@ -96,12 +96,9 @@ class NodeHttpClient implements HttpClient {
     const shouldDecompress =
       acceptEncoding?.includes("gzip") || acceptEncoding?.includes("deflate");
     let body = request.body;
-
-    if (body && !request.headers.has("Content-Length")) {
-      const bodyLength = getBodyLength(body);
-      if (bodyLength !== null) {
-        request.headers.set("Content-Length", bodyLength);
-      }
+    const bodyLength = getBodyLength(body);
+    if (bodyLength !== null) {
+      request.headers.set("Content-Length", bodyLength);
     }
 
     let responseStream: NodeJS.ReadableStream | undefined;
@@ -301,7 +298,7 @@ function streamToText(stream: NodeJS.ReadableStream): Promise<string> {
 }
 
 /** @internal */
-export function getBodyLength(body: RequestBodyType): number | null {
+export function getBodyLength(body: RequestBodyType | undefined): number | null {
   if (!body) {
     return 0;
   } else if (Buffer.isBuffer(body)) {
