@@ -6,11 +6,6 @@
  * Changes may cause incorrect behavior and will be lost if the code is regenerated.
  */
 
-import * as coreClient from "@azure/core-client";
-
-/** Optional parameters. */
-export interface IoTSpacesClientOptionalParams
-  extends coreClient.ServiceClientOptions {
-  /** Overrides client endpoint. */
-  endpoint?: string;
-}
+export * from "./models";
+export { IoTSpacesClient } from "./ioTSpacesClient";
+export { IoTSpacesClientContext } from "./ioTSpacesClientContext";
