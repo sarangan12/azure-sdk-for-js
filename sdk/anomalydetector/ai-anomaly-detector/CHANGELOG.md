@@ -1,8 +1,8 @@
 # Release History
 
-## 3.0.0-beta.4 (2021-12-20)
+## 3.0.0-beta.4 (2022-01-18)
 
-- Introduced the new API `lastDetectAnomaly`
+- Introduced the new API `lastDetectAnomaly`.
 - Added 2 new optional properties: `imputeMode` & `imputeFixedValue` to the `DetectRequest` object.
 - Added 1 new optional property: `severity` to the `DetectEntireResponse` & `DetectLastPointResponse` objects.
 - Removed the optional property `errors` from the `VariableState` object.
