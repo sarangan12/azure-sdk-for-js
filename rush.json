@@ -1077,6 +1077,11 @@
       "versionPolicyName": "management"
     },
     {
+      "packageName": "@azure/arm-fluidrelay",
+      "projectFolder": "sdk/fluidrelay/arm-fluidrelay",
+      "versionPolicyName": "management"
+    },
+    {
       "packageName": "@azure/arm-cosmosdb",
       "projectFolder": "sdk/cosmosdb/arm-cosmosdb",
       "versionPolicyName": "management"
