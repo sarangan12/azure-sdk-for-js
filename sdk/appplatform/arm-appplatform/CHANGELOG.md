@@ -1,7 +1,5 @@
 # Release History
 
-Dummy Entry
-
 ## 3.0.1 (Unreleased)
 
 ### Features Added

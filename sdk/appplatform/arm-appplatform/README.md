@@ -1,6 +1,5 @@
 # Azure AppPlatformManagement client library for JavaScript
 
-Dummy 2
 Dummy
 
 This package contains an isomorphic SDK (runs both in Node.js and in browsers) for Azure AppPlatformManagement client.
