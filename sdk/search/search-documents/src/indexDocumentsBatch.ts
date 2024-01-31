@@ -23,11 +23,7 @@ export class IndexDocumentsBatch<T> {
    */
   public upload(documents: T[]): void {
     const batch = documents.map<IndexDocumentsAction<T>>((doc) => {
-      return {
-        ...doc,
-        __actionType: "upload",
-      };
-    });
+      return { ...doc, __actionType: "upload",}; });
 
     this.actions.push(...batch);
   }
