@@ -2,6 +2,7 @@
 // Licensed under the MIT license.
 
 import { createSerializer } from "@azure/core-client";
+import { createSerializer as Cxt } from "@azure/core-client";
 import { CloudEvent as WireCloudEvent } from "./generated/models";
 import { CloudEvent, EventGridEvent, cloudEventReservedPropertyNames } from "./models";
 import {
