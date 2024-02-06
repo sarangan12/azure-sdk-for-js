@@ -28,9 +28,8 @@ export class SearchClient extends coreHttpCompat.ExtendedServiceClient {
    * @param options The parameter options
    */
   constructor(
-    endpoint: string,
-    indexName: string,
-    apiVersion: ApiVersion20231001Preview,
+
+    endpoint: string, indexName: string, apiVersion: ApiVersion20231001Preview,
     options?: SearchClientOptionalParams
   ) {
     if (endpoint === undefined) {
