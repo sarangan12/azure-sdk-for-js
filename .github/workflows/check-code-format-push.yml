@@ -11,7 +11,7 @@ jobs:
       - name: Setup Code
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '18'
       - name: Install Rush
         run: npm install -g @microsoft/rush
       - name: Update rush
