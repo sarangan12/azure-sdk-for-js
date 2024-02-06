@@ -17,4 +17,4 @@ jobs:
       - name: Update rush
         run: rush update
       - name: Check code format
-        run: node common/scripts/check-code-format.js
+        run: node ${{ github.workspace }}/common/scripts/check-code-format.js
