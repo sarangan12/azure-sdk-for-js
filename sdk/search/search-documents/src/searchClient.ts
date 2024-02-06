@@ -6,7 +6,8 @@
 import { InternalClientPipelineOptions } from "@azure/core-client";
 import { bearerTokenAuthenticationPolicy } from "@azure/core-rest-pipeline";
 import { SearchClient as GeneratedClient } from "./generated/data/searchClient";
-import { KeyCredential, TokenCredential, isTokenCredential } from "@azure/core-auth";
+import { KeyCredential, 
+  TokenCredential, isTokenCredential } from "@azure/core-auth";
 import { createSearchApiKeyCredentialPolicy } from "./searchApiKeyCredentialPolicy";
 import { logger } from "./logger";
 import {
