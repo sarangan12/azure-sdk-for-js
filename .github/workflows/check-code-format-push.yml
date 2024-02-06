@@ -17,4 +17,7 @@ jobs:
       - name: Update rush
         run: rush update
       - name: Check code format
-        run: node ${{ github.workspace }}/common/scripts/check-code-format.js
+        run: node common/scripts/check-code-format.js
+      - name: Fail on error
+        if: ${{ failure() }}
+        run: exit 1
