@@ -18,6 +18,6 @@ jobs:
         run: rush update
       - name: Check code format
         run: node common/scripts/check-code-format.js
-      - name: Fail on error
+      - name: Fail on errors
         if: ${{ failure() }}
         run: exit 1
