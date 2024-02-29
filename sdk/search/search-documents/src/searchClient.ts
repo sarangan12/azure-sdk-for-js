@@ -25,7 +25,9 @@ import {
   VectorizableTextQuery as GeneratedVectorizableTextQuery,
 } from "./generated/data/models";
 import { createSpan } from "./tracing";
-import { deserialize, serialize } from "./serialization";
+import { deserialize, 
+  serialize } 
+  from "./serialization";
 import {
   AutocompleteOptions,
   CountDocumentsOptions,
