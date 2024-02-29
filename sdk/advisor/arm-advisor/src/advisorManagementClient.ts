@@ -78,9 +78,7 @@ export class AdvisorManagementClient extends coreClient.ServiceClient {
 
     const packageDetails = `azsdk-js-arm-advisor/3.2.0`;
     const userAgentPrefix =
-      options.userAgentOptions && options.userAgentOptions.userAgentPrefix
-        ? `${options.userAgentOptions.userAgentPrefix} ${packageDetails}`
-        : `${packageDetails}`;
+      options.userAgentOptions && options.userAgentOptions.userAgentPrefix ? `${options.userAgentOptions.userAgentPrefix} ${packageDetails}` : `${packageDetails}`;
 
     const optionsWithDefaults = {
       ...defaults,
